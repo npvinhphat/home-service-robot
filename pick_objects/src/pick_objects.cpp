@@ -44,13 +44,15 @@ int main(int argc, char** argv){
   goal.target_pose.header.stamp = ros::Time::now();
 
   // Define pick up position
-  goal.target_pose.pose.position.x = 1.0;
+  goal.target_pose.pose.position.x = 1.0f;
+  goal.target_pose.pose.position.y = 0.0f;
   goal.target_pose.pose.orientation.w = 1.0;
 
   reach_goal(goal, ac, "Hooray, the base has reached the pick up position");
   
   // Define drop off position
-  goal.target_pose.pose.position.x = -2.0;
+  goal.target_pose.pose.position.x = -2.0f;
+  goal.target_pose.pose.position.y = 0.0f;
   goal.target_pose.pose.orientation.w = 1.0;
 
   reach_goal(goal, ac, "Hooray, the base has reached the drop off position");
